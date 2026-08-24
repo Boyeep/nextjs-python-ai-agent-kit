@@ -1,0 +1,13 @@
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/.git.scaffold/
+backend/.venv/
+backend/.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db

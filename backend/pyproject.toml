@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-chatbot-api"
+version = "0.1.0"
+description = "FastAPI streaming backend for a full-stack AI chatbot template."
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.135,<1.0",
+  "httpx>=0.28,<1.0",
+  "pydantic-settings>=2.13,<3.0",
+  "uvicorn[standard]>=0.44,<1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10.0", "ruff>=0.15,<1.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
