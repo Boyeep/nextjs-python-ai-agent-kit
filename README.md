@@ -1,19 +1,20 @@
-# Next.js Python AI Chatbot Kit
+# Next.js + Python AI Agent Kit
 
-A full-stack starter for streaming AI chat products. The frontend is Next.js;
-the backend is FastAPI with a provider boundary for OpenAI-compatible APIs.
+A production-minded starter for agentic applications. It combines a Next.js
+workspace with a FastAPI agent runtime and remains useful without paid services
+through its deterministic demo tools.
 
-## Features
+## Included
 
-- streamed responses over Server-Sent Events
-- conversation history passed to the model
-- responsive chat UI and mobile conversation drawer
-- starter prompts, loading state, and error recovery
-- credential-free mock provider for local development
-- configurable model, base URL, system prompt, and API key
-- Docker Compose and CI-ready checks
+- SSE token, tool, session, and structured-result events
+- typed structured output with Pydantic
+- safe calculator and current-time example tools
+- server-side conversation sessions
+- asynchronous job submission and status polling
+- OpenAI-compatible streaming chat provider
+- responsive Next.js interface, Docker Compose, tests, and CI
 
-## Start locally
+## Run
 
 ```bash
 cd frontend && npm install
@@ -21,26 +22,13 @@ cd ../backend && python -m pip install -e ".[dev]"
 cd .. && npm run dev
 ```
 
-Open `http://127.0.0.1:3000`. The API and Swagger UI run at
-`http://127.0.0.1:8000` and `http://127.0.0.1:8000/docs`.
-
-Mock mode works without an API key. For a real provider, copy
-`backend/.env.example` to `backend/.env` and set:
-
-```env
-AI_PROVIDER=openai
-AI_API_KEY=your-key
-AI_BASE_URL=https://api.openai.com/v1
-AI_MODEL=gpt-4.1-mini
-```
-
-Any service implementing the OpenAI chat-completions streaming format can be
-used by changing `AI_BASE_URL` and `AI_MODEL`.
+Use `POST /api/v1/agent/stream` for interactive runs, `GET
+/api/v1/sessions/{id}` for history, and `POST /api/v1/jobs` for work that should
+continue outside the request lifecycle. API documentation is available at
+`http://127.0.0.1:8000/docs`.
 
 ## Verify
 
 ```bash
 npm run check
 ```
-
-This runs frontend lint/build plus backend Ruff and Pytest.
