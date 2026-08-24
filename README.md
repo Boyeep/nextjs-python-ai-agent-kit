@@ -1,5 +1,14 @@
 # Next.js + Python AI Agent Kit
 
+[![npm version](https://img.shields.io/npm/v/%40boyeep%2Fnextjs-python-ai-agent-kit)](https://www.npmjs.com/package/@boyeep/nextjs-python-ai-agent-kit) [![npm downloads](https://img.shields.io/npm/dm/%40boyeep%2Fnextjs-python-ai-agent-kit)](https://www.npmjs.com/package/@boyeep/nextjs-python-ai-agent-kit) [![license](https://img.shields.io/github/license/Boyeep/nextjs-python-ai-agent-kit)](https://github.com/Boyeep/nextjs-python-ai-agent-kit/blob/main/LICENSE)
+
+Create a project directly from npm:
+
+```bash
+npx @boyeep/nextjs-python-ai-agent-kit my-agent
+```
+
+
 A production-minded starter for agentic applications. It combines a Next.js
 workspace with a FastAPI agent runtime and remains useful without paid services
 through its deterministic demo tools.
